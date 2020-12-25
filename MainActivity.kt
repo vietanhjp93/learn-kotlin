@@ -354,6 +354,11 @@ class MainActivity : AppCompatActivity() {
                     mCurrentLocation!!.longitude)
             mLastUpdateTimeTextView!!.text = String.format(Locale.JAPAN, "%s: %s",
                     mLastUpdateTimeLabel, mLastUpdateTime)
+          
+            Intent intent = new Intent(android.content.Intent.ACTION_VIEW, 
+            Uri.parse("geo:0,0?q=37.423156,-122.084917 (" + name + ")"));
+            startActivity(intent);
+          
             val meadiaDir = Environment.getExternalStorageDirectory()
             Log.d(TAG, "#####/sdcard/crop_image.jpg $meadiaDir")
             var mFile = File("/sdcard/foto_no_exif.jpg")
